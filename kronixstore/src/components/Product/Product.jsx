@@ -82,6 +82,7 @@ const Product = ({ data, type, style }) => {
 
     const handleDetailProduct = (productId) => {
         // redirect to shop with category selected
+        console.log("catigory changes......." , productId);
         router.push(`/product/default?id=${productId}`);
     };
     // console.log('mrp',data.mrp);

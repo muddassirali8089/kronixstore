@@ -29,7 +29,7 @@ export default function BreadCrumb1() {
 
                     
                     axios.get('http://localhost:3030/api/items'),
-                    axios.get('http://localhost:3030/api/categories')
+                    axios.get('http://localhost:3030/api/categories/query/name')
                   //  axios.get('https://api.kronixstore.com/api/categories/query/name')
                 ]);
                 let cat = categoriesResponse.data.map(catg => catg.name);
