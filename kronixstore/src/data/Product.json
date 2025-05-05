@@ -1,0 +1,51 @@
+[
+  {
+    "id": "1",
+    "category": "fashion",
+    "type": "top",
+    "name": "mesh shirtfrfrf",
+    "gender": "women",
+    "new": true,
+    "sale": false,
+    "rate": 4,
+    "price": 45,
+    "mrp": 55,
+    "brand": "gucci",
+    "sold": 12,
+    "qty": 100,
+    "min_qty": 10,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "variation": [
+      {
+        "color": "red",
+        "colorCode": "#DB4444",
+        "colorImage": "/images/collection/food.png",
+        "image": "/images/collection/food.png"
+      },
+      {
+        "color": "yellow",
+        "colorCode": "#ECB018",
+        "colorImage": "/images/collection/food.png",
+        "image": "/images/collection/food.png"
+      }
+    ],
+    "thumbImage": [
+      "/images/collection/food.png",
+      "/images/product/1000x1000.png"
+    ],
+    "images": [
+      "/images/collection/food.png",
+      "/images/collection/food.png",
+      "/images/collection/food.png",
+      "/images/collection/food.png"
+    ],
+    "description": "Keep your home organized, yet elegant with storage cabinets by Onita Patio Furniture. Traditionally designed, they are perfect to be used in the any place where you need to store.",
+    "action": "quick shop",
+    "slug": "mesh-shirt"
+  }
+]
