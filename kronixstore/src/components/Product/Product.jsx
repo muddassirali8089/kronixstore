@@ -19,6 +19,9 @@ import Rate from '../Other/Rate'
 
 
 const Product = ({ data, type, style }) => {
+    console.log("product data.....");
+    console.log(data)
+    console.log("product data.....");
     const [activeColor, setActiveColor] = useState('')
     const [activeSize, setActiveSize] = useState('')
     const [openQuickShop, setOpenQuickShop] = useState(false)
@@ -83,6 +86,10 @@ const Product = ({ data, type, style }) => {
     const handleDetailProduct = (productId) => {
         // redirect to shop with category selected
         console.log("catigory changes......." , productId);
+        console.log("catigory changes.......");
+        console.log(data);
+        console.log("catigory changes.......");
+        
         router.push(`/product/default?id=${productId}`);
     };
     // console.log('mrp',data.mrp);

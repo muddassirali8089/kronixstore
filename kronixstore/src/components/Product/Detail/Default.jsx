@@ -1,6 +1,8 @@
 'use client'
 
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState  } from 'react'
+import { useSearchParams } from 'next/navigation';
+
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -22,6 +24,14 @@ import ModalSizeguide from '@/components/Modal/ModalSizeguide'
 SwiperCore.use([Navigation, Thumbs]);
 
 const Default = ({ data, productId }) => {
+    console.log("data..");
+    console.log(data);
+     console.log("data...");
+
+     console.log("...........");
+    console.log(productId);
+     console.log("...........");
+    
   
     const swiperRef = useRef();
     const [photoIndex, setPhotoIndex] = useState(0)
@@ -38,9 +48,21 @@ const Default = ({ data, productId }) => {
     const { addToCompare, removeFromCompare, compareState } = useCompare();
     const { openModalCompare } = useModalCompareContext()
     
-    let productMain = data.find(product => product.id === productId)
+    let productMain = data.find(product => product.id === productId );
+
+    const searchParams = useSearchParams()
+  const id = searchParams.get('id')
+    console.log("main product");
+    
+    console.log(productMain);
+
+    console.log("main product");
+    
     if (productMain === undefined) {
-        productMain = data[0]
+
+        console.log("true.......");
+        
+        productMain = data[id-1];
     }
 
     const percentSale = Math.floor(100 - ((productMain?.price / productMain?.mrp) * 100))
@@ -1007,8 +1029,12 @@ const Default = ({ data, productId }) => {
                         <div className="heading3 text-center">Related Products</div>
                         <div className="list-product hide-product-sold  grid lg:grid-cols-4 grid-cols-2 md:gap-[30px] gap-5 md:mt-10 mt-6">
                             {data.slice(Number(productId), Number(productId) + 4).map((item, index) => (
-                                <Product key={index} data={item} type='grid' style='style-1' />
+                               
+                               <Product key={index} data={item} type='grid' style='style-1' />
+
+                               
                             ))}
+                            
                         </div>
                     </div>
                 </div>

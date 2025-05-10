@@ -12,6 +12,7 @@ const BreadcrumbProduct = ({ data, productPage, productId }) => {
     const productMain = data.filter(product => product.id === productId);
     const router = useRouter();
     const handleDetailProduct = (productId) => {
+        console.log("---------------")
         router.push(`/product/${productPage}?id=${productId}`);
     };
 

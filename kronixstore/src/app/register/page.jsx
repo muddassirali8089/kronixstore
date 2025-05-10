@@ -47,7 +47,7 @@ const Register = () => {
         }
 
         try {
-            const response = await axios.post('https://api.kronixstore.com/api/users', form);
+            const response = await axios.post('http://localhost:3030/api/users', form);
             const data = response;
             setSuccess('Registration successful! You can now login.')
             setForm({ email: '', password: '', confirmPassword: '', agreed: false })

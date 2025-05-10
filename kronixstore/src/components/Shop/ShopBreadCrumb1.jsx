@@ -9,6 +9,9 @@ import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css'
 import HandlePagination from '../Other/HandlePagination';
 const ShopBreadCrumb1 = ({ data, productPerPage, dataType, gender, category, selectCategory }) => {
+   console.log("🛍️ ShopBreadCrumb1 received data:", data);
+
+   
     const [selectedCategory, setSelectedCategory] = useState(selectCategory)
     const [showOnlySale, setShowOnlySale] = useState(false)
     const [sortOption, setSortOption] = useState('');

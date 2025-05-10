@@ -14,7 +14,10 @@ const ProductDefault = () => {
     const searchParams = useSearchParams()
     let productId = searchParams.get('id')
 
+    console.log(" there is the id......"  , productId);
+
     if (productId === null) {
+        
         productId = '1'
     }
     const [data, setData] = useState([]);

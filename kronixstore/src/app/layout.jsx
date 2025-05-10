@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <GlobalProvider>
       <html lang="en">
-        <body className={instrumentSans.variable}>
+        <body >
           {children}
           <ModalCart serverTimeLeft={serverTimeLeft} />
           <ModalWishlist />

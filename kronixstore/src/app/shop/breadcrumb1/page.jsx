@@ -17,31 +17,45 @@ export default function BreadCrumb1() {
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
     const [data, setData] = useState([]);
+    console.log("dfghjk");
+    
+    console.log(data);
+    console.log("dfghjk");
+    
     const [dataCat, setDataCat] = useState([]);
     useEffect(() => {
         setType(datatype);
     }, [datatype]);
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const [itemsResponse, categoriesResponse] = await Promise.all([
+    const fetchData = async () => {
+        try {
+            const [itemsResponse, categoriesResponse] = await Promise.all([
+                axios.get('http://localhost:3030/api/items'),
+                axios.get('http://localhost:3030/api/categories/query/name')
+                // axios.get('https://api.kronixstore.com/api/categories/query/name')
+            ]);
 
-                    
-                    axios.get('http://localhost:3030/api/items'),
-                    axios.get('http://localhost:3030/api/categories/query/name')
-                  //  axios.get('https://api.kronixstore.com/api/categories/query/name')
-                ]);
-                let cat = categoriesResponse.data.map(catg => catg.name);
-                setData(itemsResponse.data);
-                setDataCat(cat);
-            } catch (err) {
-                setError(err.message || 'Something went wrong');
-            }
-        };
+            console.log("✅ Fetched items:", itemsResponse.data);
+            console.log("✅ Fetched categories (raw):", categoriesResponse.data);
 
-        fetchData();
-    }, []);
+            let cat = categoriesResponse.data.map(catg => catg.name);
+            console.log("✅ Mapped category names:", cat);
+
+            setData(itemsResponse.data);
+            setDataCat(cat);
+        } catch (err) {
+            setError(err.message || 'Something went wrong');
+            console.error("❌ Error fetching data:", err);
+        }
+    };
+
+    fetchData();
+}, []);
+
+
+console.log("📦 Final data sent to ShopBreadCrumb1:", data);
+console.log("📂 Final categories sent to ShopBreadCrumb1:", dataCat);
 
     return (
         <>
